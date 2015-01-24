@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>TODO supply a title</title>
+
+    </h:head>
+    <f:metadata>
+        <f:viewAction action="#{customerController.populateCustomerList()}"/>
+    </f:metadata>
+    <h:body>
+        <h1>Customer Listing</h1>
+        <h:form id="customerListingForm">
+            <h:dataTable id="customerListing" value="#{customerController.customerList}"
+                         var="customer" border="1">
+                <h:column id="name">
+                    <h:outputText value="#{customer.name}"/>
+                </h:column>
+                <h:column id="email">
+                    <h:outputText value="#{customer.email}"/>
+                </h:column>
+                <h:column id="phone">
+                    <h:outputText value="#{customer.phone}"/>
+                </h:column>
+                <h:column id="address1">
+                    <h:outputText value="#{customer.addressline1}"/>
+                </h:column>
+                <h:column id="address2">
+                    <h:outputText value="#{customer.addressline2}"/>
+                </h:column>
+                <h:column id="city">
+                    <h:outputText value="#{customer.city}"/>
+                </h:column>
+                <h:column id="state">
+                    <h:outputText value="#{customer.state}"/>
+                </h:column>
+                <h:column id="zip">
+                    <h:outputText value="#{customer.zip}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
